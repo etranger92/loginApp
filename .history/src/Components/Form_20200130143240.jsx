@@ -159,7 +159,7 @@ class Form extends Component {
         console.log("fired");
         this.props.handleOnPending();
         const sendDatas = await axios.post(
-          "/.netlify/functions/server/login/add",
+          "http://localhost:5000/.netlify/functions/server/login/add",
           {
             account,
             isMailSelected: this.state.mailSelected
