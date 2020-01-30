@@ -170,7 +170,6 @@ class Form extends Component {
             success: true
           });
           this.props.handleOnPending();
-          //User saved in DB then we send an email
           if (this.state.mailSelected) this.sendMailToUser();
         } else if (!sendDatas.data.success) {
           this.setState({
@@ -212,6 +211,7 @@ class Form extends Component {
           account
         }
       );
+      console.log(sendDatas);
       if (sendDatas.data) {
         this.setState({
           isMailSent: true
@@ -367,7 +367,8 @@ class Form extends Component {
           </div>
           <div className="form_group">
             <label for="optionMail">
-              Shall we send your password to your mail box?
+              Can we send your profil to your mail box? (Working only localy, as
+              facing issues with lambda)
             </label>
             <input
               type="checkbox"

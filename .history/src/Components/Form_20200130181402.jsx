@@ -170,7 +170,6 @@ class Form extends Component {
             success: true
           });
           this.props.handleOnPending();
-          //User saved in DB then we send an email
           if (this.state.mailSelected) this.sendMailToUser();
         } else if (!sendDatas.data.success) {
           this.setState({
@@ -212,6 +211,7 @@ class Form extends Component {
           account
         }
       );
+      console.log(sendDatas);
       if (sendDatas.data) {
         this.setState({
           isMailSent: true
